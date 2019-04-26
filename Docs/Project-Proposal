@@ -1,0 +1,31 @@
+# Project Proposal 
+Team Members:
+ Kailie Chang and Victoria Tran 
+
+# Project Idea: Tetris in Java
+
+# Goals
+Create our own version of Tetris
+Demonstrate our knowledge of the ideals of Open Source 
+Successfully run code on Linux environment
+ Resources 
+Libraries Used
+
+# Existing Source Project: 
+Using an existing Tetris Java Open-Source project
+https://gist.github.com/DataWraith/5236083 
+
+#Implementation of Resources
+Libraries: 
+//Use these libraries to customize the game interface and keyboard inputs
+
+Existing Source: 
+The existing Tetris project will be the foundation for our project. We are then going to modify and add more features to this code. 
+
+#New Features to Existing Source
+- Add Start Page //DONE
+- Add Game Over *
+- Change controls: Make down arrow speed the blocks & added ESC option // DONE
+- Add Levels of Difficulty; Change the speed of blocks for Easy, Medium, Hard *
+- Change speed of blocks when the score reaches a certain number //DONE
+
