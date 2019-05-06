@@ -260,8 +260,9 @@ public class Tetris extends JPanel {
 				case KeyEvent.VK_UP:
 					game.rotate(-1);
 					break;
+			//CHANGED FROM ROTATING TO DROP DOWN
 				case KeyEvent.VK_DOWN:
-					game.rotate(+1);
+					game.dropDown();
 					break;
 				case KeyEvent.VK_LEFT:
 					game.move(-1);
@@ -271,7 +272,7 @@ public class Tetris extends JPanel {
 					break;
 				case KeyEvent.VK_SPACE:
 					game.dropDown();
-					game.score += 1;
+					//game.score += 1;
 					break;
 				} 
 			}
