@@ -236,6 +236,11 @@ public class Tetris extends JPanel {
 	}
 
 	public static void main(String[] args) {
+		//CHANGED ADDED START PAGE
+		ImageIcon intro = new ImageIcon("C://Users/admin/Desktop/tet.gif");
+	        UIManager.put("OptionPane.okButtonText", "START");
+		JOptionPane.showMessageDialog(null, new JLabel(" ", intro, JLabel.CENTER), "Welcome", JOptionPane.PLAIN_MESSAGE);
+		
 		JFrame f = new JFrame("Tetris");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setSize(12*26+10, 26*23+25);
