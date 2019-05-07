@@ -236,7 +236,7 @@ public class Tetris extends JPanel {
 	}
 
 	public static void main(String[] args) {
-		//CHANGED ADDED START PAGE
+		//**CHANGED ADDED START PAGE**
 		ImageIcon intro = new ImageIcon("C://Users/admin/Desktop/tet.gif");
 	        UIManager.put("OptionPane.okButtonText", "START");
 		JOptionPane.showMessageDialog(null, new JLabel(" ", intro, JLabel.CENTER), "Welcome", JOptionPane.PLAIN_MESSAGE);
@@ -260,7 +260,7 @@ public class Tetris extends JPanel {
 				case KeyEvent.VK_UP:
 					game.rotate(-1);
 					break;
-			//CHANGED FROM ROTATING TO DROP DOWN
+				//**CHANGED FROM ROTATING TO DROP DOWN**
 				case KeyEvent.VK_DOWN:
 					game.dropDown();
 					break;
@@ -271,8 +271,8 @@ public class Tetris extends JPanel {
 					game.move(+1);
 					break;
 				case KeyEvent.VK_SPACE:
-					game.dropDown();
-					//game.score += 1;
+					game.rotate(+1);
+					//game.score += 1; //commented out to not increment score
 					break;
 				} 
 			}
@@ -286,8 +286,24 @@ public class Tetris extends JPanel {
 			@Override public void run() {
 				while (true) {
 					try {
-						Thread.sleep(1000);
+						Thread.sleep(1000); //1000 is one second
 						game.dropDown();
+						
+						//**our mod = make the pieces fall faster at a certain score**
+						if(game.score >= 1000)
+						{
+							//if the score is greater or equal to 4000
+							if(game.score >= 4000)
+							{
+								Thread.sleep(100);
+								game.dropDown();
+							}
+							else
+							{
+								Thread.sleep(500);
+								game.dropDown();
+							}
+						}
 					} catch ( InterruptedException e ) {}
 				}
 			}
