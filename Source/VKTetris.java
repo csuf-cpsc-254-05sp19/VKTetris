@@ -9,7 +9,11 @@ import java.util.Collections;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Tetris extends JPanel {
+//**added libraries to implement images and JOptionPane**
+import java.awt.image.BufferedImage;
+import javax.swing.*;
+
+public class VKTetris extends JPanel {
 
 	private static final long serialVersionUID = -8715353373678321308L;
 
@@ -237,16 +241,16 @@ public class Tetris extends JPanel {
 
 	public static void main(String[] args) {
 		//**CHANGED ADDED START PAGE**
-		ImageIcon intro = new ImageIcon("C://Users/admin/Desktop/tet.gif");
+		ImageIcon intro = new ImageIcon("/home/student/OpenSourceProject/VKTetris/tet.gif");
 	        UIManager.put("OptionPane.okButtonText", "START");
 		JOptionPane.showMessageDialog(null, new JLabel(" ", intro, JLabel.CENTER), "Welcome", JOptionPane.PLAIN_MESSAGE);
 		
-		JFrame f = new JFrame("Tetris");
+		JFrame f = new JFrame("VKTetris");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setSize(12*26+10, 26*23+25);
 		f.setVisible(true);
 		
-		final Tetris game = new Tetris();
+		final VKTetris game = new VKTetris();
 		game.init();
 		f.add(game);
 		
