@@ -11,7 +11,7 @@ import java.util.Collections;
 
 //**added libraries to implement images and JOptionPane**
 import javax.swing.*;
-import java.awt.RenderingHints.Key;
+//import java.awt.RenderingHints.Key;
 
 public class VKTetris extends JPanel{
 
@@ -296,7 +296,24 @@ public class VKTetris extends JPanel{
 		f.add(game);
 		//**CENTERED GAME**
 		f.setLocationRelativeTo(null);
-	
+
+		//ADDED JMENUBAR
+		JMenu levels= new JMenu("Levels");
+		JMenu help= new JMenu("Help");
+		JMenu restart= new JMenu("Restart");
+		JMenuItem ez= new JMenuItem("Easy");
+		JMenuItem med= new JMenuItem("Medium");
+		JMenuItem hard= new JMenuItem("Hard");
+		JMenuItem extreme= new JMenuItem("Extreme");
+		JMenuBar mainBar= new JMenuBar();
+		f.setJMenuBar(mainBar);
+		mainBar.add(levels);
+		mainBar.add(help);
+		mainBar.add(restart);
+		levels.add(ez);
+		levels.add(med);
+		levels.add(hard);
+		levels.add(extreme);
 		
 		// Keyboard controls
 		f.addKeyListener(new KeyListener() {
