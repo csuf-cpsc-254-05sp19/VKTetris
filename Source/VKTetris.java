@@ -86,6 +86,9 @@ public class VKTetris extends JPanel {
 
 	private long score;
 	private Color[][] well;
+	//**made a bool variable that checks for game over**
+	//**keeps game going if player did not lose yet**
+	private boolean isGameOver = false;
 	
 	// Creates a border around the well and initializes the dropping piece
 	private void init() {
@@ -112,6 +115,21 @@ public class VKTetris extends JPanel {
 		}
 		currentPiece = nextPieces.get(0);
 		nextPieces.remove(0);
+	}
+
+	//**ADDED A FUNCTION TO CHECK FOR GAME OVER**
+	public boolean checkGameOver()
+	{
+		for(int i = 1; i < 11; i++)
+		{
+					
+			if(well[i][2] != Color.BLACK)
+			{
+				isGameOver = true;
+			}
+		}
+		
+		return isGameOver;
 	}
 	
 	// Collision test for the dropping piece
@@ -160,8 +178,21 @@ public class VKTetris extends JPanel {
 		for (Point p : Tetraminos[currentPiece][rotation]) {
 			well[pieceOrigin.x + p.x][pieceOrigin.y + p.y] = tetraminoColors[currentPiece];
 		}
-		clearRows();
-		newPiece();
+		//clearRows();
+		//newPiece();
+
+		//**TEST FOR GAME OVER WHEN PLACING BLOCKS IN WELL**
+		if(checkGameOver() == true)
+		{
+			JOptionPane.showMessageDialog(null, "GAME OVER, you lost! :(", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+			//UIManager.put("OptionPane.okButtonText", "OK");			
+			System.exit(0);
+		}
+		else
+		{
+			clearRows();
+			newPiece();
+		}
 	}
 	
 	public void deleteRow(int row) {
@@ -242,13 +273,12 @@ public class VKTetris extends JPanel {
 	public static void main(String[] args) {
 		//**CHANGED ADDED START PAGE**
 		ImageIcon intro = new ImageIcon("/home/student/OpenSourceProject/VKTetris/tet.gif");
-	        UIManager.put("OptionPane.okButtonText", "START");
+	        //UIManager.put("OptionPane.okButtonText", "START");
 		JOptionPane.showMessageDialog(null, new JLabel(" ", intro, JLabel.CENTER), "Welcome", JOptionPane.PLAIN_MESSAGE);
 		
 		JFrame f = new JFrame("VKTetris");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setSize(12*26+10, 26*23+25);
-		f.setVisible(true);
 		
 		final VKTetris game = new VKTetris();
 		game.init();
@@ -299,12 +329,12 @@ public class VKTetris extends JPanel {
 							//if the score is greater or equal to 4000
 							if(game.score >= 4000)
 							{
-								Thread.sleep(100);
+								Thread.sleep(60);
 								game.dropDown();
 							}
 							else
 							{
-								Thread.sleep(500);
+								Thread.sleep(300);
 								game.dropDown();
 							}
 						}
@@ -312,5 +342,7 @@ public class VKTetris extends JPanel {
 				}
 			}
 		}.start();
+		
+		f.setVisible(true);
 	}
 }
