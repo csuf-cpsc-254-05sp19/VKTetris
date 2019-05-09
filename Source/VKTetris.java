@@ -184,8 +184,7 @@ public class VKTetris extends JPanel {
 		//**TEST FOR GAME OVER WHEN PLACING BLOCKS IN WELL**
 		if(checkGameOver() == true)
 		{
-			JOptionPane.showMessageDialog(null, "GAME OVER, you lost! :(", "Game Over", JOptionPane.INFORMATION_MESSAGE);
-			//UIManager.put("OptionPane.okButtonText", "OK");			
+			JOptionPane.showMessageDialog(null, "GAME OVER, you lost! :(", "Game Over", JOptionPane.INFORMATION_MESSAGE);			
 			System.exit(0);
 		}
 		else
@@ -273,7 +272,6 @@ public class VKTetris extends JPanel {
 	public static void main(String[] args) {
 		//**CHANGED ADDED START PAGE**
 		ImageIcon intro = new ImageIcon("/home/student/OpenSourceProject/VKTetris/tet.gif");
-	        //UIManager.put("OptionPane.okButtonText", "START");
 		JOptionPane.showMessageDialog(null, new JLabel(" ", intro, JLabel.CENTER), "Welcome", JOptionPane.PLAIN_MESSAGE);
 		
 		JFrame f = new JFrame("VKTetris");
