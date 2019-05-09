@@ -104,6 +104,8 @@ public class VKTetris extends JPanel{
 				} else {
 					well[i][j] = Color.BLACK;
 				}
+				well[0][2]=Color.RED;
+				well[11][2]=Color.RED;
 			}
 		}
 		newPiece();
