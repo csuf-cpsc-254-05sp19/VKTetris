@@ -1,8 +1,7 @@
-package tetrisVK;
+//package tetrisVK;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.awt.RenderingHints.Key;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -12,9 +11,8 @@ import java.util.Collections;
 
 //**added libraries to implement images and JOptionPane**
 import javax.swing.*;
+import java.awt.RenderingHints.Key;
 
-
-	
 public class VKTetris extends JPanel{
 
 	private static final long serialVersionUID = -8715353373678321308L;
@@ -190,8 +188,8 @@ public class VKTetris extends JPanel{
 		//**TEST FOR GAME OVER WHEN PLACING BLOCKS IN WELL**
 		if(checkGameOver() == true)
 		{
-			ImageIcon gameOver = new ImageIcon("/Users/admin/Desktop/gameOver.gif");
-		    UIManager.put("OptionPane.okButtonText", "END GAME");
+			ImageIcon gameOver = new ImageIcon("/home/student/OpenSourceProject/VKTetris/gameOver.gif");
+		    	UIManager.put("OptionPane.okButtonText", "END GAME");
 			JOptionPane.showMessageDialog(null, new JLabel(" ", gameOver, JLabel.CENTER), "You're in the End Game now", JOptionPane.PLAIN_MESSAGE);
 		
 			System.exit(0);
@@ -280,11 +278,11 @@ public class VKTetris extends JPanel{
 
 	public static void main(String[] args) {
 		//**CHANGED ADDED START PAGE**
-		ImageIcon intro = new ImageIcon("/Users/admin/Desktop/tet.gif");
-	    UIManager.put("OptionPane.okButtonText", "START");
+		ImageIcon intro = new ImageIcon("/home/student/OpenSourceProject/VKTetris/tet.gif");
+	    	UIManager.put("OptionPane.okButtonText", "START");
 		JOptionPane.showMessageDialog(null, new JLabel(" ", intro, JLabel.CENTER), "Welcome", JOptionPane.PLAIN_MESSAGE);
-		//ADDED HOW TO PLAY
-		ImageIcon howTo = new ImageIcon("/Users/admin/Desktop/howTo.png");
+		//**ADDED HOW TO PLAY**
+		ImageIcon howTo = new ImageIcon("/home/student/OpenSourceProject/VKTetris/howTo.png");
 		UIManager.put("OptionPane.okButtonText", "OK");
 		JOptionPane.showMessageDialog(null, new JLabel(" ", howTo, JLabel.CENTER), "RULES", JOptionPane.PLAIN_MESSAGE);
 		
@@ -296,26 +294,8 @@ public class VKTetris extends JPanel{
 		final VKTetris game = new VKTetris();
 		game.init();
 		f.add(game);
-		//CENTERED GAME
+		//**CENTERED GAME**
 		f.setLocationRelativeTo(null);
-	
-		//ADDED JMENUBAR
-		JMenu levels= new JMenu("Levels");
-		JMenu help= new JMenu("Help");
-		JMenu restart= new JMenu("Restart");
-		JMenuItem ez= new JMenuItem("Easy");
-		JMenuItem med= new JMenuItem("Medium");
-		JMenuItem hard= new JMenuItem("Hard");
-		JMenuItem extreme= new JMenuItem("Extreme");
-		JMenuBar mainBar= new JMenuBar();
-		f.setJMenuBar(mainBar);
-		mainBar.add(levels);
-		mainBar.add(help);
-		mainBar.add(restart);
-		levels.add(ez);
-		levels.add(med);
-		levels.add(hard);
-		levels.add(extreme);
 	
 		
 		// Keyboard controls
@@ -341,18 +321,6 @@ public class VKTetris extends JPanel{
 					
 				//CHANGE: Speed drop down with space
 				case KeyEvent.VK_SPACE:
-					new Thread() {
-						@Override public void run() {
-							while (true) {
-								try {
-									Thread.sleep(initial-900); //1000 is one second
-									game.dropDown();
-									initial=1000;
-									
-								} catch ( InterruptedException e ) {}
-							}
-						}
-					};
 					game.dropDown();
 					break;
 					
