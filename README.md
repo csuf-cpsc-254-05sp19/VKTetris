@@ -18,14 +18,14 @@
 - *License*: BSD License
 
 #Setup & Installation\
-*IMAGE SETUP*
+*IMAGE SETUP*\
 • Download the following images: gameOver.gif, howTo.png, tet.gif\
 • Go into the Source file --> VKTetris.java and change the location address of the images\
 
-Ex: ImageIcon gameOver = new ImageIcon("CHANGE ADDRESS OF IMAGE HERE/gameOver.gif");
+Ex: ImageIcon gameOver = new ImageIcon("CHANGE ADDRESS OF IMAGE HERE/gameOver.gif");\
 
-•*Line 191: change address for gameOver.gif\*
-•*Line 281: change address for tet.gif\*
+•*Line 191: change address for gameOver.gif*\
+•*Line 281: change address for tet.gif*\
 •*Line 285: change address for howTo.png*
 
 *LINUX SET UP*: If you want to run this on a Linux distro... \
