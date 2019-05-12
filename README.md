@@ -17,19 +17,19 @@
 - *Source*: source code of project
 - *License*: BSD License
 
-#Setup & Installation\
-*IMAGE SETUP*\
-• Download the following images: gameOver.gif, howTo.png, tet.gif\
-• Go into the Source file --> VKTetris.java and change the location address of the images\
+# Setup & Installation
+*IMAGE SETUP*
+• Download the following images: gameOver.gif, howTo.png, tet.gif
+• Go into the Source file --> VKTetris.java and change the location address of the images
 
-Ex: ImageIcon gameOver = new ImageIcon("CHANGE ADDRESS OF IMAGE HERE/gameOver.gif");\
+Ex: ImageIcon gameOver = new ImageIcon("CHANGE ADDRESS OF IMAGE HERE/gameOver.gif");
 
-•*Line 191: change address for gameOver.gif*\
-•*Line 281: change address for tet.gif*\
+•*Line 191: change address for gameOver.gif*
+•*Line 281: change address for tet.gif*
 •*Line 285: change address for howTo.png*
 
-*LINUX SET UP*: If you want to run this on a Linux distro... \
+*LINUX SET UP*: If you want to run this on a Linux distro... 
 •Download a Java JDK in the terminal with the command: 
-sudo apt-get install openjdk-7-jdk\
-•After downloading the Java JDK, compile the java file with the command: javac VKTetris.java\
+sudo apt-get install openjdk-7-jdk
+•After downloading the Java JDK, compile the java file with the command: javac VKTetris.java
 •Lastly, run class files with command: java VKTetris
