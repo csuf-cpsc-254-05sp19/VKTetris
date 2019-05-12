@@ -11,7 +11,8 @@ import java.util.Collections;
 
 //**added libraries to implement images and JOptionPane**
 import javax.swing.*;
-//import java.awt.RenderingHints.Key;
+//javax.swing.ImageIcon;
+//javax.swing.JOptionPane;
 
 public class VKTetris extends JPanel{
 
