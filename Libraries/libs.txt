@@ -1,1 +1,7 @@
-VK Tetris had several libraries implemented, however, the two main libraries utilized were java.awt and java.swing. The original source code used java.awt library elements to ultimately make the graphics of the game. These graphics include the grid, the well in which the Tetriminos blocks fall into, and the actual design and color of the blocks. We also used some features from the java.awt libraries such as java.awt.KeyEvent and java.awt.KeyListener to adjust the key controls and make slight adjustments to the blocks and grid. Moreover, our team imported another library which was the java.swing library. This library allowed us to use JOptionPanes which played a key role in creating the start, navigation, and game over pages. Additionally, java.swing library enabled us to display images under java.swing.ImageIcon.
+VK Tetris had several libraries implemented, however, the two main libraries utilized were java.awt and java.swing. The original source
+code used java.awt library elements to ultimately make the graphics of the game. These graphics include the grid, the well in which the
+Tetriminos blocks fall into, and the actual design and color of the blocks. We also used some features from the java.awt libraries such as
+java.awt.KeyEvent and java.awt.KeyListener to adjust the key controls and make slight adjustments to the blocks and grid. Moreover, our
+team imported another library which was the java.swing library. This library allowed us to use JOptionPanes which played a key role in
+creating the start, navigation, and game over pages. Additionally, java.swing library enabled us to display images under
+java.swing.ImageIcon.
